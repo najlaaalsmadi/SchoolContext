@@ -195,8 +195,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\School\Students.cshtml" />
     <Content Include="Views\School\Courses.cshtml" />
-    <Content Include="Views\School\AddStudent.cshtml" />
-    <Content Include="Views\School\AddCourse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

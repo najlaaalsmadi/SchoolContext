@@ -4,30 +4,26 @@
     ViewBag.Title = "Courses";
 }
 
-<h2>Courses</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CourseName)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CourseName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CourseId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CourseId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CourseId })
-        </td>
-    </tr>
-}
-
+<h2>الدورات</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>اسم الدورة</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var course in Model)
+        {
+            <tr>
+                <td>@course.CourseId</td>
+                <td>@course.CourseName</td>
+            </tr>
+        }
+    </tbody>
 </table>
+<form method="post" action="@Url.Action("AddCourse", "School")">
+    <input type="text" name="courseName" placeholder="اسم الدورة" required />
+    <button type="submit">إضافة دورة</button>
+</form>
+
